@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useBox } from "../context/boxContext";
 import OrderSummary from "./Summary";
 import QuantitySelector from "../components/QuantitySelector";
-// import ProgressBorderBox from "../components/ProgressBorderBox";
 import { useEffect, useState } from "react";
 
 const PreviewBoxEmpty = () => {
@@ -44,7 +43,7 @@ const PreviewBox = () => {
     ...boxList,
     ...Array(boxSize - boxList.length).fill(null),
   ];
-  
+
   return (
     <div className="fade-in-up">
       <div className="flex flex-col gap-3 items-center">

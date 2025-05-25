@@ -27,7 +27,7 @@ export default function ProgressBorderBox({
     }
 
     animate()
-  }, [progress])
+  }, [progress, animatedProgress])
 
   const percentage = animatedProgress * 100
 
