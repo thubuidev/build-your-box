@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const PreviewBoxEmpty = () => {
   return (
-    <div className="h-[500px] m-auto w-full max-w-md grid grid-cols-3 gap-4 border border-dashed border-[#371c06] rounded-2xl p-4">
+    <div className="h-[500px] m-auto w-full grid grid-cols-3 gap-4 border border-dashed border-[#371c06] rounded-2xl p-4">
       <div className="w-full col-span-3 py-2 border border-dashed border-[#371c06] rounded-xl flex items-center justify-center bg-white">
         <div className="h-full flex items-center justify-center text-center text-gray-500 px-6">
           <div>
@@ -49,7 +49,7 @@ const PreviewBox = () => {
       <div className="flex flex-col gap-3 items-center">
           <div
             aria-hidden="true"
-            className={`w-full m-auto shadow-md max-w-md grid ${
+            className={`w-full m-auto shadow-md grid ${
               boxSize === 6 ? "grid-cols-2 md:grid-cols-3" : "grid-cols-2 md:grid-cols-4"
             }  gap-4 border bg-[#371c06] border-[#371c06] rounded-2xl p-4 transition-transform duration-500 ${
               animate ? "scale-105" : ""
@@ -65,9 +65,8 @@ const PreviewBox = () => {
                   alt={item ? item.name : "Bakery Product"}
                   width={150}
                   height={220}
-                  className="mb-2 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-40 object-contain"
-                  sizes="(max-width: 640px) 64px, (max-width: 768px) 96px, 128px"
-                  style={{ height: "auto" }}
+                  className="mb-2 object-contain"
+                  
                 />
               </div>
             ))}

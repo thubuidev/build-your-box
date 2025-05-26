@@ -20,9 +20,8 @@ const BoxSizeButton = ({ size }: BoxSizeProps) => {
   return (
     <Button
       variant="outline"
-      className={`w-34 h-[50px] ${hasActive && "bg-blue"} hover:bg-blue`}
+      className={`w-full lg:w-[200px] h-[60px] ${hasActive && "bg-blue"} hover:bg-blue`}
       onClick={handleChooseBoxSize}
-      size={"lg"}
       disabled={isDisabled}
     
     >
