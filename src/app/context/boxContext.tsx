@@ -14,6 +14,8 @@ type BoxContextType = {
   removeBoxQuantity: () => void;
   boxQuantity: number;
   resetBox: () => void;
+  setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
+  currentStep: number;
 };
 
 const BoxContext = createContext<BoxContextType | undefined>(undefined);
@@ -23,6 +25,7 @@ export function BoxProvider({ children }: { children: React.ReactNode }) {
   const [boxSize, setBoxSize] = useState<number>(0);
   const [boxList, setBoxList] = useState<BoxItemListType[]>([]);
   const [boxQuantity, setBoxQuantity] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(1);
 
   const chooseBoxSize = (size: number) => {
     setBoxSize(size);
@@ -67,7 +70,10 @@ export function BoxProvider({ children }: { children: React.ReactNode }) {
     setBoxSize(0);
     setBoxList([]);
     setBoxQuantity(1);
+    setCurrentStep(1);
   };
+
+
 
   return (
     <BoxContext.Provider
@@ -80,7 +86,9 @@ export function BoxProvider({ children }: { children: React.ReactNode }) {
         addBoxQuantity, 
         removeBoxQuantity,
         boxQuantity,
-        resetBox
+        resetBox,
+        setCurrentStep, 
+        currentStep
       }}
     >
       {children}

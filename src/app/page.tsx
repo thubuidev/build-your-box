@@ -1,8 +1,6 @@
-import StepComponent from "./components/StepComponent";
 import { BoxProvider } from "./context/boxContext";
 import PreviewBox from "./containers/PreviewBox";
-import BoxSizeButton from "./components/BoxSizeButton";
-import ProductList from "./containers/ProductList";
+import StepManagement from "./containers/StepManagement";
 
 export default function Home() {
   return (
@@ -13,25 +11,19 @@ export default function Home() {
 
       <BoxProvider>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-6">
-            <StepComponent title="Step 1: Choose Your Bakery Products">
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-                <BoxSizeButton size={6} />
-                <BoxSizeButton size={12} />
-              </div>
-            </StepComponent>
 
-            <StepComponent title="Step 2: Customize Your Box">
-              <ProductList />
-            </StepComponent>
+          <div className="order-1 lg:order-2 space-y-6">
+            <StepManagement />
           </div>
 
-          <div className="sticky top-10 h-fit">
+          <div className="order-2 lg:order-1 relative md:sticky top-10 h-fit">
             <div className="fade-in-up">
               <PreviewBox />
             </div>
           </div>
+
         </div>
+
       </BoxProvider>
     </main>
 

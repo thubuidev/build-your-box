@@ -65,7 +65,9 @@ const PreviewBox = () => {
                   alt={item ? item.name : "Bakery Product"}
                   width={150}
                   height={220}
-                  className="mb-2"
+                  className="mb-2 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-40 object-contain"
+                  sizes="(max-width: 640px) 64px, (max-width: 768px) 96px, 128px"
+                  style={{ height: "auto" }}
                 />
               </div>
             ))}

@@ -8,19 +8,20 @@ import { cn } from "@/lib/utils";
 type Props = {
   title: string;
   children: React.ReactNode;
+  defaultOpen: boolean;
 };
 
-export default function ProductCategorySection({ title, children }: Props) {
-  const [isOpen, setIsOpen] = useState(true);
+export default function ProductCategorySection({ title, children, defaultOpen }: Props) {
+  const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
 
   return (
-    <div className="mb-6 border rounded-xl shadow-sm overflow-scroll">
+    <div className="mb-6 border rounded-xl shadow-sm">
       <div
-        className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 px-4 py-3 cursor-pointer bg-secondary"
+        className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 px-4 py-3 cursor-pointer bg-secondary"
         onClick={() => setIsOpen(!isOpen)}
       >
         <h2 className="text-base sm:text-lg font-bold">{title}</h2>
-        <Button variant="ghost" size="icon" className="self-end sm:self-auto">
+        <Button variant="ghost" size="icon" className="self-end sm:self-auto h-fit">
           {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </Button>
       </div>

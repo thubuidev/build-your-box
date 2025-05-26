@@ -9,7 +9,7 @@ import {
 const ProductList = () => {
   return (
     <>
-      <ProductCategorySection title="Cookies">
+      <ProductCategorySection title="Cookies" defaultOpen={true}>
         {cookiesProducts.map((product) => (
           <ProductCard
             key={product.id}
@@ -18,12 +18,12 @@ const ProductList = () => {
             price={product.price}
             quantity_of_set={product.quantity_of_set}
             image={product.image}
-            type={product.type}
+            type={product.type}  
           />
         ))}
       </ProductCategorySection>
 
-      <ProductCategorySection title="Breads">
+      <ProductCategorySection title="Breads" defaultOpen={false}>
         {bakeryProducts
           ?.filter(({ type }) => type === ProductType.BREADS)
           .map((product) => (
@@ -39,7 +39,7 @@ const ProductList = () => {
           ))}
       </ProductCategorySection>
 
-      <ProductCategorySection title="Cake Rings & Bibingka Muffins">
+      <ProductCategorySection title="Cake Rings & Bibingka Muffins" defaultOpen={false}>
         {bakeryProducts
           ?.filter(({ type }) => type === ProductType.CAKES)
           .map((product) => (

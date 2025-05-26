@@ -78,7 +78,7 @@ export default function ProductCard(product: BoxItemListType) {
           <br />({quantity_of_set} pcs)
         </h2>
         <p className="text-xs sm:text-sm text-gray-600 mb-3 leading-tight">
-          Set of {quantity_of_set} items
+          {quantity_of_set}pcs for each choose
         </p>
 
         <div className="flex items-center justify-between flex-wrap gap-y-1">

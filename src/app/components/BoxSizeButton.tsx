@@ -8,15 +8,20 @@ type BoxSizeProps = {
 };
 
 const BoxSizeButton = ({ size }: BoxSizeProps) => {
-  const { chooseBoxSize, boxList, boxSize } = useBox();
+  const { chooseBoxSize, boxList, boxSize, setCurrentStep } = useBox();
   const isDisabled = boxList?.filter((item) => item.quantity_of_set > 0).length > size;
   const hasActive = size === boxSize;
+
+  const handleChooseBoxSize = () => {
+    chooseBoxSize(size);
+    setCurrentStep(2);
+  };
   
   return (
     <Button
       variant="outline"
       className={`w-34 h-[50px] ${hasActive && "bg-blue"} hover:bg-blue`}
-      onClick={() => chooseBoxSize(size)}
+      onClick={handleChooseBoxSize}
       size={"lg"}
       disabled={isDisabled}
     
