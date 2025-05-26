@@ -15,7 +15,7 @@ export default function ProductCategorySection({ title, children, defaultOpen }:
   const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
 
   return (
-    <div className="mb-6 border rounded-xl shadow-sm">
+    <div className="mb-6 border rounded-xl shadow-sm overflow-hidden">
       <div
         className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 px-4 py-3 cursor-pointer bg-secondary"
         onClick={() => setIsOpen(!isOpen)}
@@ -28,7 +28,7 @@ export default function ProductCategorySection({ title, children, defaultOpen }:
     
       <div
         className={cn(
-          "transition-all duration-500 overflow-scroll",
+          "transition-all duration-500 overflow-scroll  no-scrollbar",
           isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
